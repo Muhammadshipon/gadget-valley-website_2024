@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-sky-50">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gadget Valley</title>
+     <!-- daisy ui and tailwind links  -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+     <script src="https://cdn.tailwindcss.com"></script>
+     
+
+</head>
+<body >
+  <header>
+    <h1 class="text-6xl font-bold text-center text-blue-950 py-6 italic">Gadget Valley</h1>
+  </header>
+  <main class="max-w-screen-xl m-auto">
+               <!-- search field section  -->
+ <section>
+  <div class="text-center pb-10 pt-5">
+    <input type="text" placeholder="search your phone..." class="input rounded-r-none  w-full max-w-xs" id="input-field" />
+    <button class="btn bg-violet-800 btn-secondary pb-1 right-1 text-xl relative rounded-l-none" onclick="searchHandler()">search</button>
+  </div>
+ </section>    
+                    <!-- loading-spinner  -->
+ <div class="text-center my-24 hidden" id="loading-spinner"><span class="loading loading-spinner loading-lg text-white "></span></div> 
+                    <!-- Not match search result -->
+      <div class="text-center my-5 hidden text-2xl" id="search-not-match">
+        <p class="text-xl">No Result Available. Please! Search Again. </p>
+      </div>              
+
+              <!-- display phone section  -->
+<section >
+  <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10
+  justify-around m-auto ">
+                
+                  
+  
+
+  </div>
+  
+<div class="text-center my-10 hidden" id="show-all-btn"><button class="btn  btn-secondary text-xl font- bg-green-600" onclick="showAllButtonHandler()">Show All</button></div>
+
+</section>
+
+                         <!-- modal section  -->
+   <section>
+
+             <!-- Open the modal using ID.showModal() method -->
+                          
+                          <dialog id="show_details" class="modal modal-bottom sm:modal-middle">
+                            <div class="modal-box">
+
+                              <!-- loading-spinner-2  -->
+                              <div class="text-center my-24 hidden" id="loading-spinner-2"><span class="loading loading-spinner loading-lg z-10 "></span></div> 
+
+                              <div id="modal-container">
+                                  
+                              </div>
+                              <div class="flex gap-2">
+                                <!-- <p class="font-bold">Sensors : </p> <ol id="Sensors-container"></ol> -->
+
+                                
+                              </div>
+                              <div class="modal-action">
+                                <form method="dialog">
+                                  <!-- if there is a button in form, it will close the modal -->
+                                  <button class="btn bg-blue-500 text-white" >Close</button>
+                                </form>
+                              </div>
+                            </div>
+                          </dialog>
+
+   </section>                      
+  
+  </main>
+  <footer class="footer footer-center p-4 bg-base-300 text-base-content mt-20">
+    <aside>
+      <p>Copyright © 2024 - All right reserved by ACME Industries Ltd</p>
+    </aside>
+  </footer>
+  
+      <script src="Script/index.js"></script>
+</body>
+</html>
